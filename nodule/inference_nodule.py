@@ -235,7 +235,6 @@ class Xception(autograd.Layer):
 
     def features(self, input):
         x = self.conv1(input)
-        # print(1)
         x = self.bn1(x)
         x = autograd.relu(x)
 

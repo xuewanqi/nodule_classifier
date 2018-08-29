@@ -1,0 +1,10 @@
+#! /bin/bash
+params=/home/wanqi
+
+
+
+#nvidia-docker run -p $port:$port -v $params:/root/params --name nodule-inference \
+  #-d nodule-inference /bin/bash -c "python model_nodule.py --image_path /root/params/I00001019003.jpg -p /root/params/xception_params.pkl"
+
+nvidia-docker run -it nodule-gpu -v /home/wanqi:/root/params --name nodule-inference /bin/bash 
+
