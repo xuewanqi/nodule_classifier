@@ -46,11 +46,31 @@ RUN git clone https://github.com/apache/incubator-singa.git /root/incubator-sing
     cd python && \
     pip install .
 
+
 # create directory
 RUN mkdir /root/params
 
-# Expose Ports for webservice (80)
-EXPOSE 80
-
 WORKDIR /root
-CMD ['/bin/bash']
+
+# Copy files required for the app to run
+COPY app.py /root
+COPY admins.py /root
+COPY errors.py /root
+COPY users.py /root
+
+# Copy files for inference
+COPY model_nodule.py /root
+ADD nodule /root/nodule
+
+# Tell the port number the container should expose
+EXPOSE 5000
+
+RUN pip install --upgrade pip
+RUN pip install flask
+RUN pip install flask-httpauth
+RUN pip install flask-sqlalchemy
+RUN pip install passlib
+
+
+
+

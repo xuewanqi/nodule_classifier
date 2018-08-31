@@ -14,9 +14,9 @@ class Model(object):
 
 class NoduleClassifier(Model):
 
-    def __init__(self, params_file):
+    def __init__(self, args):
         self.args = None
-        self.model= inference_nodule.load_model(params_file)
+        self.model= inference_nodule.load_model(args.params)
         self.index2label={0:'normal', 1:'nodule'}
     def predict(self, img):
         return inference_nodule.predict(img, self.model, self.index2label, self.args)

@@ -1,5 +1,6 @@
 import argparse
 import os
+import io
 
 from singa import device
 from singa import tensor
@@ -279,7 +280,7 @@ def load_model(params_file):
 	return model
 
 def image2array(file, size=299):
-    im=Image.open(file)
+    im=Image.open(io.BytesIO(file))
     im=im.resize((size, size), Image.BILINEAR)
     im=im.convert('L')
     im_array = np.asarray(im).astype(np.float32)
@@ -288,8 +289,9 @@ def image2array(file, size=299):
     im_array=np.expand_dims(im_array, 1)
     return im_array
 
+dev = device.create_cuda_gpu()
+
 def predict(img, model, index2label, args=None):
-    dev = device.create_cuda_gpu()
 
     autograd.training=False
     img_array=image2array(img)
