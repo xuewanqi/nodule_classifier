@@ -19,7 +19,6 @@ def generate_token():
 
 def get_password_hashes():
     return {
-	"admin": "$6$rounds=656000$tfiKl7FPQ5VU5YlE$POAeVZC92E/BTExiIDF1l6lPZcyxj6vTKKBsmOiIK78QoW5WKBzkGGGTMlGcs3dEBYvKBwsovHIhCt2Nr1MWc0",
         "admin0": "$6$rounds=656000$0C7Y4JJhPeKmqYeR$7cmHGafIbTf.nQlcJoc/XdulciayVyZAivAW3tPn2EJW2R0Cp..Njwazau6WixDa7JK3TImJ96rsZhnhFNqUz."
     }
 
