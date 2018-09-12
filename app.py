@@ -205,8 +205,8 @@ def parse_info_as_image(raw_data):
 
 def parse_info_as_json(raw_data):
     try:
-        print(raw_data)
-        print(type(raw_data))
+        #print(raw_data)
+        #print(type(raw_data))
         raw_info_dict = json.loads(raw_data)
     #except json.JSONDecodeError:
     except ValueError:
