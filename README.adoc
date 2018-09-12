@@ -31,7 +31,7 @@ tells Docker to assign it a port.
 === How to include your token in HTTP requests
 There are 3 ways to include your token, according to your preference.
 
-1. Include it as a URL querystring argument like in the three examples below.
+*  Include it as a URL querystring argument like in the three examples below.
 This is not recommended, since URLs are often kept in log files.
 Your token would be subjected to security risks.
 
@@ -42,11 +42,11 @@ Your token would be subjected to security risks.
     http://[hostname]/model?token=YOUR_TOKEN_HERE
 
 
-2. Include your token in the `Authorization` header of your HTTP request.
+*  Include your token in the `Authorization` header of your HTTP request.
 
 image::images/Image-020918-093732.618.png[]
 
-3. Include your token in the `Token` header of your HTTP request.
+*  Include your token in the `Token` header of your HTTP request.
 
 image::images/Image-020918-093732.619.png[]
 
